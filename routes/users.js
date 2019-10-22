@@ -8,7 +8,7 @@ var validator = require('validator');
 
 //Send Grid api for sending email
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+sgMail.setApiKey('');
 
 //User model
 const User = require('../models/User');
@@ -93,10 +93,10 @@ router.post('/register',(req,res)=> {
                             //Sengrid sending email
                             const msg = {
                                 to: newUser.email,
-                                from: 'naman.mitian@gmail.com',
+                                from: 'aditya99prakash@gmail.com',
                                 subject: 'Welcome to FoodCloud',
-                                text: 'Hello! ' + newUser.name +' ! You have successfully registered. Enjoy dining.',
-                                html: '<strong>'+ 'Hello! ' + newUser.name +' ! You have successfully registered. Enjoy dining.' +'</strong>',
+                             //   text: 'Hello! ' + newUser.name +' ! You have successfully registered. Enjoy dining.',
+                                html: '<strong>'+ 'Hello! ' + newUser.name +' ! You have successfully registered. Enjoy dining.' +'</strong>'
                               };
                               sgMail.send(msg);
 
