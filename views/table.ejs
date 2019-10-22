@@ -1,0 +1,22 @@
+
+<% include ./partials/messages %>
+<h2>Select your table</h2>
+
+<form action="/dashboard/booktable" method="POST">
+    <select name="name">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <h2>Select the number of people sitting</h2>
+    <select name="no">
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+        <option value="4"></option>
+    </select>
+    <input type="checkbox" name="tnc">
+<button type="submit">Submit</button>
+</form>
