@@ -7,7 +7,7 @@ router.get('/',(req, res)=> res.render('welcome'));
 
 // Dashboard
 router.get('/dashboard',ensureAuthenticated ,(req, res)=>
- res.render('dashboard',{
+ res.render('dash',{
    name : req.user.name  
  })
  );
