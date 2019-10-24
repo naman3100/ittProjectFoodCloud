@@ -1,5 +1,4 @@
-<style>
-    @import url("https://fonts.googleapis.com/css?family=Alex+Brush|Overpass+Mono:600,700");
+@import url("https://fonts.googleapis.com/css?family=Alex+Brush|Overpass+Mono:600,700");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
 body {
   overflow-x: hidden;
@@ -34,7 +33,7 @@ ul {
 */
 header {
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent), url("http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg") no-repeat center center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent), url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
@@ -117,9 +116,10 @@ header .center {
 }
 header .center h1 {
   font-family: "Alex Brush", cursive !important;
-  color: #be8040;
+  color: #da9044;
   font-size: 80px;
-  margin-bottom: 34px;
+  font-weight:  bolder;
+  margin-bottom: -20px;
 }
 header .center h2 {
   text-transform: uppercase;
@@ -127,7 +127,7 @@ header .center h2 {
   font-size: 28px;
 }
 header .center #asterisk {
-  color: #be8040;
+  color: #da9044;
   line-height: 0.5;
   font-size: 30px;
   display: flex;
@@ -171,7 +171,7 @@ nav div.show {
 */
 .custom-font {
   font-family: "Alex Brush", cursive;
-  color: #be8040;
+  color: #da9044;
   font-size: 75px;
   line-height: 0;
 }
@@ -186,6 +186,11 @@ nav div.show {
   margin-top: 30px;
   color: #4d4d4d;
 }
+.center-text-menu {
+  text-align: center;
+  margin-top: 30px;
+  color: #4d4d4d;
+}
 .center-text h2 {
   margin-top: 25px;
   line-height: 0;
@@ -197,12 +202,12 @@ nav div.show {
 }
 .center-text a {
   font-family: "PT Sans", sans-serif;
-  color: #be8040;
+  color: #da9044;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
-  border-bottom: solid 2px #be8040;
+  border-bottom: solid 2px #da9044;
 }
 
 .add-flex {
@@ -211,7 +216,7 @@ nav div.show {
   align-items: center;
 }
 .add-flex .stuffed-cherries {
-  background: url("https://s-media-cache-ak0.pinimg.com/736x/61/b1/98/61b19844448b2bad5c78e9a2c6347986.jpg") no-repeat center center;
+  background: url("https://images.unsplash.com/photo-1528143582951-ef14e49f4381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center center;
   background-size: cover;
   height: 315px;
   width: 320px;
@@ -237,7 +242,7 @@ nav div.show {
   TASTEFUL RECIPES SECTION
 */
 .bread-background {
-  background: black url("http://www.performerprosites.com/development/clients/showpalace/wp-content/uploads/2014/05/tasteful-recipies-dinner-theatre.jpg") no-repeat center center;
+  background: black url("https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   height: 500px;
@@ -262,7 +267,7 @@ nav div.show {
   THE PERFECT BLEND SECTION
 */
 .cake-background {
-  background: black url("http://www.rustiquerichmond.co.uk/wp-content/uploads/2014/06/desert.jpg") no-repeat center center;
+  background: black url("https://images.unsplash.com/photo-1532597144951-3237ed98ab3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1876&q=80") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   height: 500px;
@@ -271,9 +276,7 @@ nav div.show {
 /*
   CULINARY DELIGHT SECTION
 */
-.reservation-section {
-  margin-bottom: 40px;
-}
+
 .reservation-section div:first-child {
   flex: 1;
 }
@@ -304,17 +307,16 @@ footer button {
   top: -20px;
   left: 50%;
   -webkit-transform: translate(-50%, -10%);
-          transform: translate(-50%, -10%);
-  background: white;
+  transform: translate(-50%, -10%);
+  background: #d8d8d8;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
   font-weight: bold;
-  letter-spacing: 1.2px;
-  line-height: 1.2;
   border-radius: 50%;
+  color: black;
+  /* border: 1px solid black; */
   margin-top: 0;
 }
 footer h4 {
@@ -619,151 +621,404 @@ footer .copyright span {
     opacity: 1;
   }
 }
-</style>
+/*------ COOKIE BAR -------*/
+.cookie-notice {
+  box-sizing: border-box;
+  position: fixed;
+  bottom:60px;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  padding: 12px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(20, 40, 80, 0.2);
+  border-radius: 3px;
+  font-size: 0.86em;
+  line-height: 1.5;
+  color: #456;
+  transform: translate3d(0, 0, 0);
+  animation: cookie-notice-fadein 500ms ease;
+}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.6.2/rellax.js"></script>
-<script  >    
-    $(document).ready(function() {
-      
-        $('button').on('click', function() {
-          if($(this).hasClass('nav-button')) {
-            $('nav div').addClass('show');
-          } else if($(this).hasClass('exit-menu')) {
-            $('nav div').removeClass('show');
-          } 
-          else if($(this).hasClass('to-top')) {
-            $('html,body').animate({scrollTop:0}, 'slow');
-          }
-        });
-      
-        AOS.init({      
-              duration: 1800,
-          easing: 'ease'
-        });
-         
-      })
-    </script>
+@keyframes cookie-notice-fadein {
+  0% { transform: translate3d(0, 128px, 0); opacity: 0; }
+  100% { transform: translate3d(0, 0, 0); opacity: 100; }
+}
 
-<html>
-<header>
-    <nav>
-      <h2><a href="#" id="logo">foodCloud</a></h2>
-      <button class="nav-button fa fa-bars"></button>
-      <div>
-  <!--     <ul> -->
-        <ul>
-          <button class="exit-menu fa fa-times"></button>
-          <li><a href="#" class="active">welcome</a></li>
-          <li><a href="/dashboard/menu">menu</a></li>
-          <li><a href="/dashboard/booktable">reservations</a></li>
-          <li><a href="#">news</a></li>
-          <li><a href="#">contact</a></li>
-          <li><a href="/users/logout">logout</a></li>
-        </ul>
-  <!--     </ul> -->
-      </div>
-    </nav>
-    <div class="center">
-      <h1 class="alex-brush">Welcome</h1>
-      <h2><%= name  %></h2>
-      <span id="asterisk">*</span>
-      <p>ready to eat</p>
-    </div>
-  </header>
-  
-  <section class="add-padding add-flex">
-    <div class="center-text">
-      <h1 class="alex-brush"><span class="custom-font">Discover</span><br />OUR STORY</h1>
-      <h2>*</h2>
-      <p>Our founder, Naman Agarwal, had an idea to create a restaurant that was more than a place that served great food. He wanted to give locals a place where they'd always feel at home. A place where they could get no-nonsense food at down-to-earth prices, and where they'd be treated right by people who had a passion to serve. </p>
-      <a href="#">about us</a>
-    </div>
-    <div  class="stuffed-cherries" data-aos="fade-left" data-aos-delay="300">
-    </div>
-  </section>
-  
-  <section class="bread-background center-h1">
-    <h1 class="custom-h1 alex-brush"><span class="custom-font">Tasteful</span><br />RECIPES</h1>
-  </section>
-  
-  <section class="menu add-flex add-padding">
-    <div class="menu-images">
-      <img src="http://www.konoba-mirakul.com/wp-content/uploads/2015/03/delikatesa4.jpg"  data-aos="fade-down" data-aos-delay="300"/>
-      <img src="http://www.konoba-mirakul.com/wp-content/uploads/2015/03/delikatesa21.jpg" data-aos="fade-left" data-aos-delay="300"/>
-      <img src="https://www.gourmetsociety.co.uk/uploads/images/restaurants/093ce538894c95892f62dc93bb023636-image.png" data-aos="fade-right" data-aos-delay="300"/>
-      <img src="http://retrokitchenbar.com/wp-content/uploads/2014/05/menu-thumb-4-300x218.jpg" data-aos="fade-up" data-aos-delay="300"/>
-    </div>
-    <div class="center-text">
-      <h1><span class="custom-font alex-brush">Discover</span><br />MENU</h1>
-      <h2>*</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae distinctio possimus tempore voluptatem, quo repellendus quas culpa quasi, hic optio sapiente molestias necessitatibus, aliquam excepturi consequatur a voluptates quam beatae!</p>
-      <a href="/dashboard/menu">view the full menu</a>
-    </div>
-  </section>
-  
-  <section class="cake-background center-h1">
-    <h1 class="custom-h1"><span class="custom-font alex-brush">The perfect</span><br />BLEND</h1>
-  </section>
-  
-  <section class="add-flex reservation-section">
-    <div class="center-text add-padding">
-      <h1><span class="custom-font alex-brush">Culinary</span><br />DELIGHT</h1>
-      <h2>*</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim animi odit in dignissimos neque ratione, laboriosam rerum! Deleniti accusamus non, aliquam tempora, mollitia laborum ad, fugiat at explicabo esse aut. Lorem ipsum dolor sit amet, adipisicing elit.</p>
-      <a href="#">make a reservation</a>
-    </div>
-    <div>
-      <img src="http://www.konoba-mirakul.com/wp-content/uploads/2015/03/kulinarstvo11.jpg" data-aos="fade-up" data-aos-delay="300"/>
-      <img src="http://www.konoba-mirakul.com/wp-content/uploads/2015/03/kulinarstvo21.jpg" data-aos="fade-down" data-aos-delay="300"/>
-    </div>
-  </section>
-  
-  <footer>
-    <button class="to-top"><i class="fa fa-chevron-up"></i>TOP</button>
-    
-    <div class="restaurant-info">
-    
-      <div class="locations">
-        <h4>LOCATIONS</h4>
-        <div class="location-1">
-          <h5>Sector 32<br />Kormangla, Banglore</h5>
-        </div><!--location-1-->
-        <div class="location-2">
-          <h5>Sector 7<br />HSR Layout, Banglore</h5>
-        </div>
-      </div><!--locations end-->
-  
-      <div class="hours">
-        <h4>HOURS</h4>
-        <div class="weekdays">
-          <h5>Monday - Thursday<br />
-            5:30pm - 10:00pm
-          </h5>
-        </div><!--weekdays end-->
-        
-        <div class="weekends">
-          <h5>Friday & Saturday<br />
-            5:30pm - 11:00pm
-          </h5>
-        </div><!--weekends end-->
-        
-        <div class="private-events">
-          <h5>Available for private<br />
-            events on Sunday
-          </h5>
-        </div>
-        
-      </div><!--hours end-->
-      
-    </div><!--restaurant-info end-->
-    
-    <div class="copyright">
-      <p><small>Copyright 2014 &#169; Handcrafted with love by <span>PixelGrade</span> Team</small></p>
-      <p><small>Permissions and Copyright &#8226; Contact The Team</small></p>
-    </div>
-    
-  </footer>
-  </html>
-  
+.cookie-notice-message > p {
+  margin: 0;
+  padding: 0;
+  width: 65%;
+}
+
+.cookie-notice > button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  width: 35%;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 35%;
+  bottom: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border-left: solid 1px rgba(0, 40, 80, 0.1);
+  font-family: "Alex Brush", cursive !important;
+  color: #da9044;
+  font-size: 2.5em;
+}
+
+.cookie-notice > button:hover {
+  color: #4d4d4d;
+}
+
+.cookie-notice > button:active {
+  color: #4d4d4d;
+}
+
+@media (max-width: 570px) {
+  .cookie-notice {
+  box-sizing: border-box;
+  position: fixed;
+  bottom:60px;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  padding: 12px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(20, 40, 80, 0.2);
+  border-radius: 3px;
+  font-size: 0.3em;
+  line-height: 1.5;
+  color: #456;
+  transform: translate3d(0, 0, 0);
+  animation: cookie-notice-fadein 500ms ease;
+}
+
+@keyframes cookie-notice-fadein {
+  0% { transform: translate3d(0, 128px, 0); opacity: 0; }
+  100% { transform: translate3d(0, 0, 0); opacity: 100; }
+}
+
+.cookie-notice-message > p {
+  margin: 0;
+  padding: 0;
+  width: 65%;
+}
+
+.cookie-notice > button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  width: 35%;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 35%;
+  bottom: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border-left: solid 1px rgba(0, 40, 80, 0.1);
+  font-family: "Alex Brush", cursive !important;
+  color: #da9044;
+  font-size: 3em;
+}
+
+.cookie-notice > button:hover {
+  color: #4d4d4d;
+}
+
+.cookie-notice > button:active {
+  color: #4d4d4d;
+}
+}
+
+/*MENU*/
+#our-menu h2 {
+    text-align: center;
+    display: block;
+}
+
+#our-menu {
+    padding: 30px 0px 30px 0px;
+    color: #4d4d4d;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#our-menu h3 {
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.menu-tabs {
+    border-bottom: 2px solid #4d4d4d;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: none;
+    text-align: center;
+}
+
+.menu-tabs > li.active > a,
+.menu-tabs > li.active > a:focus,
+.menu-tabs > li.active > a:hover {
+    border-width: 0;
+}
+
+.menu-tabs > li > a {
+    border: none;
+    color: #4d4d4d;
+}
+
+.menu-tabs > li.active > a,
+.menu-tabs > li > a:hover {
+    border: none;
+    color: #4d4d4d !important;
+    background: transparent;
+}
+
+.menu-tabs > li > a::after {
+    content: "";
+    background: #4d4d4d;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: -1px;
+    transition: all 250ms ease 0s;
+    transform: scale(0);
+}
+
+.menu-tabs > li.active > a::after,
+.menu-tabs > li:hover > a::after {
+    transform: scale(1);
+}
+
+.menu-tabs li,
+.menu-tabs li a {
+    display: inline-block;
+}
+
+.menu-tabs li {
+    float: none;
+}
+
+.menu-tabs>li.active>a,
+.menu-tabs>li.active>a:hover,
+.menu-tabs>li.active>a:focus {
+    background: none;
+    color: #4d4d4d;
+}
+
+.menu-tabs li a {
+    color: #4d4d4d;
+    border-radius: 0;
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.menu-group-item {
+    margin-bottom: 20px;
+}
+
+.menu-item-price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.menu-title {
+    color: 4d4d4d;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: block;
+    margin: 5px 0;
+}
+
+.menu-descp {
+    color: #4d4d4d;
+}
+/*MENU CLOSE*/
+
+/*TEAM*/
+.at-section__title {
+  margin: 0 0 70px;
+  color: #000;
+  text-align: center;
+}
+.at-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #FFF;
+  border: 1px solid #E2E9ED;
+  margin-top: 20px;
+}
+.at-grid[data-column="1"] .at-column {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  flex-basis: 100%;
+}
+.at-grid[data-column="2"] .at-column {
+  width: 50%;
+  max-width: 50%;
+  min-width: 50%;
+  flex-basis: 50%;
+}
+.at-grid[data-column="3"] .at-column {
+  width: 33.3333333333%;
+  max-width: 33.3333333333%;
+  min-width: 33.3333333333%;
+  flex-basis: 33.3333333333%;
+}
+.at-grid[data-column="4"] .at-column {
+  width: 25%;
+  max-width: 25%;
+  min-width: 25%;
+  flex-basis: 25%;
+}
+.at-grid[data-column="5"] .at-column {
+  width: 20%;
+  max-width: 20%;
+  min-width: 20%;
+  flex-basis: 20%;
+}
+.at-grid[data-column="6"] .at-column {
+  width: 16.6666666667%;
+  max-width: 16.6666666667%;
+  min-width: 16.6666666667%;
+  flex-basis: 16.6666666667%;
+}
+.at-grid[data-column="7"] .at-column {
+  width: 14.2857142857%;
+  max-width: 14.2857142857%;
+  min-width: 14.2857142857%;
+  flex-basis: 14.2857142857%;
+}
+.at-grid[data-column="8"] .at-column {
+  width: 12.5%;
+  max-width: 12.5%;
+  min-width: 12.5%;
+  flex-basis: 12.5%;
+}
+.at-grid[data-column="9"] .at-column {
+  width: 11.1111111111%;
+  max-width: 11.1111111111%;
+  min-width: 11.1111111111%;
+  flex-basis: 11.1111111111%;
+}
+.at-column {
+  position: relative;
+  background: #FFF;
+  box-shadow: 0 0 0 1px #E2E9ED;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+.at-column:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.at-column:hover {
+  z-index: 1;
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.at-column:hover .at-social {
+  margin: 16px 0 0;
+  opacity: 1;
+}
+@media (max-width: 800px) {
+  .at-column {
+    width: 50% !important;
+    max-width: 50% !important;
+    min-width: 50% !important;
+    flex-basis: 50% !important;
+  }
+}
+@media (max-width: 600px) {
+  .at-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
+.at-user {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  text-align: center;
+}
+.at-user__avatar {
+  width: 98px;
+  height: 98px;
+  border-radius: 100%;
+  margin: 0 auto 20px;
+  overflow: hidden;
+}
+.at-user__avatar img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+.at-user__name {
+  color: #313435;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 5.25rem;
+}
+.at-user__title {
+  font-size: 1.75rem;
+  line-height: 4.75rem;
+}
+.at-social {
+  margin: 0 0 -18px;
+  opacity: 0;
+  transition: margin 0.2s ease, opacity 0.2s ease;
+}
+.at-social__item {
+  display: inline-block;
+  margin: 0 10px;
+}
+.at-social__item a {
+  display: block;
+}
+.at-social__item svg {
+  fill: #515F65;
+  display: block;
+  height: 18px;
+  transition: fill 0.2s ease;
+}
+.at-social__item svg:hover {
+  fill: #788D96;
+}
+
+.container-team {
+  max-width: 1170px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+}
+#our-team {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}

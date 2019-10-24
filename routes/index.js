@@ -55,9 +55,14 @@ router.get('/dashboard',ensureAuthenticated ,(req, res)=>
       table.no=no;
       table.author={id: userId,username: userName};
       table.save().then(t=>{
+        
+        //User booking table
+        req.user.booking.confirm=true;
+        req.user.booking.tableno=no;
 
-        req.user.reservation=true;
+        req.user.save().then((user)=>console.log("User booking confirmed"));
 
+        //Flash message for booking successful
         req.flash('success_msg', 'You have successfully booked a table');
         res.redirect("/dashboard/booktable");
       }).catch(err => console.log(err));
@@ -65,9 +70,9 @@ router.get('/dashboard',ensureAuthenticated ,(req, res)=>
   } )
  });
 
- //Order food
- router.get('/dashboard/orderfood',ensureAuthenticated,(req, res)=>{
-  res.send("Order food works");
+ //Menu 
+ router.get('/dashboard/menu',ensureAuthenticated,(req, res)=>{
+  res.render("menu");
 });
 
 //Check Order status

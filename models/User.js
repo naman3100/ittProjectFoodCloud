@@ -16,6 +16,15 @@ const UserSchema = new mongoose.Schema({
     date:{
         type:Date,
         default:Date.now
+    },
+    booking:{
+        confirm:{
+            type:Boolean,
+            default:false
+        },
+        tableno:{
+            type:String
+        }
     }
 });
 

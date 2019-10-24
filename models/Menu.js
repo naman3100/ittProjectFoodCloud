@@ -1,17 +1,15 @@
 const mongoose = require("mongoose");
 
-const TableSchema = new mongoose.Schema({
-    name :{
-        type:String,
-        required:true
-    },
-    no : {
-        type:String,
-        required:true
-    },
-    booking : {
-        type:Boolean
-    },
+
+const MenuSchema = new mongoose.Schema({
+    food :[{
+        name:{
+            type:String
+        },
+        cost:{
+            type:Number
+        }
+    }],
     author: {
         id: {
            type: mongoose.Schema.Types.ObjectId,
@@ -22,7 +20,7 @@ const TableSchema = new mongoose.Schema({
      expireAt: {
         type: Date,
         default: Date.now,
-        index: { expires: '30m' },
+        index: { expires: '10m' },
       },
      date:{
         type:Date,
@@ -30,6 +28,6 @@ const TableSchema = new mongoose.Schema({
     }
 });
 
-const Table = mongoose.model("Table" , TableSchema);
+const Menu = mongoose.model("Menu" , MenuSchema);
 
-module.exports = Table;
+module.exports = Menu;
