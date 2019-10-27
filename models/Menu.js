@@ -8,6 +8,9 @@ const MenuSchema = new mongoose.Schema({
         },
         cost:{
             type:Number
+        },
+        plates :{
+            type:Number
         }
     }],
     author: {

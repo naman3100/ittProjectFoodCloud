@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const  { ensureAuthenticated } = require('../config/auth');
 const Table = require("../models/Table");
+const Menu = require("../models/Menu");
+const Request = require('../models/requests')
+
 // Welcome Page
 router.get('/',(req, res)=> res.render('welcome'));
 
@@ -72,7 +75,46 @@ router.get('/dashboard',ensureAuthenticated ,(req, res)=>
 
  //Menu 
  router.get('/dashboard/menu',ensureAuthenticated,(req, res)=>{
-  res.render("menu");
+  res.render("menueg.ejs");
+});
+
+//Menu post request
+router.post('/dashboard/menu',ensureAuthenticated,(req, res)=>{
+  var food = [];
+  const userId=req.user._id;
+  const userName = req.user.name;
+  var variety = ["pizza","pasta","burger","macroni"];
+  for(var i in req.body)
+  {
+    for(var j=0;j<variety.length;j++)
+    {
+      if(i==variety[j] && req.body[i+"Plates"]!='')
+      {
+        var ob = {
+          name : i,
+          cost : req.body[i],
+          plates : req.body[i+"Plates"]
+        }
+        food.push(ob);
+      }
+    }
+  } 
+  
+  const newMenu = new Menu({food:food,author:{id: userId,username: userName}});
+  newMenu.save().then((menu)=>{
+    var m = menu.food;
+    var totCost = 0;
+    for(var k in m)
+    {
+      totCost += ((Number)(m[k].cost)*(Number)(m[k].plates));
+    }
+    var tax = (18/100*totCost);
+    totCost+=tax;
+    console.log(totCost+"  "+tax);
+    console.log(m);
+   res.render("payment",{m,totCost,tax});
+  }).catch(err => console.log(err));
+
 });
 
 //Check Order status
@@ -91,9 +133,29 @@ router.get('/dashboard/setting',ensureAuthenticated,(req, res)=>{
 });
 
 //Payment
-router.get('/dashboard/payment',ensureAuthenticated,(req, res)=>{
-  res.send("Payment works");
+router.get('/dashboard/menu/payment',ensureAuthenticated,(req, res)=>{
+  res.send("payment");
 });
 
+//REnder contact page
+router.get('/dashboard/contact',ensureAuthenticated,(req, res)=>{
+  res.render("contact");
+});
+
+//post requests
+router.post('/dashboard/contact',ensureAuthenticated,(req, res)=>{
+  console.log(req.body);
+    const name = req.body.fname + " " + req.body.lname;
+    const userRequest = new Request({name:name,email:req.body.email,phone:req.body.phone});
+    userRequest.save().then((r)=>{
+      req.flash('success_msg', 'You have successfully submitted your request');
+      res.redirect("/dashboard/contact");
+    })
+});
+
+//About us page
+router.get('/dashboard/about',ensureAuthenticated,(req, res)=>{
+  res.render("about");
+});
 
 module.exports = router;

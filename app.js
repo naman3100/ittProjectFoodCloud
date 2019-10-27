@@ -38,6 +38,7 @@ app.use(passport.session());
 
 app.use(express.static("public"));
 
+
 // Connect flash
 app.use(flash());
 
