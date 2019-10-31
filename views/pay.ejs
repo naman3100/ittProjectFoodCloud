@@ -1,0 +1,608 @@
+
+
+  
+<style>
+
+html, body{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #333333;
+    font-family: helvetica, sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    color: #444;
+}
+
+.box1, .box2, .box3{
+height: 100%;
+}
+.box1 p, .box2 p, .box3 p{
+float: right;
+width: 45%;
+}
+
+.box1 img, .box2 img, .box3 img{
+width: 50%;
+float: left;
+}
+
+.box1 a img, .box2 a img, .box3 a img{
+float: right;
+}
+
+h1, h2, h3{
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    color: #333;
+}
+
+p, ol, ul{
+    margin-top: 0;
+}
+
+ol, ul{
+    padding: 0;
+    list-style: none;
+}
+
+ul.actions{
+    text-align: center;
+}
+    
+
+p{
+    line-height: 180%;
+}
+
+
+a{
+    color: #0000FF;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.container{
+    overflow: hidden;
+    margin: 0em auto;
+    width: 80%;
+}
+
+
+
+.button{
+    display: inline-block;
+    padding: 0 20px;
+    background: #009E2D;
+    letter-spacing: 4px;
+    line-height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 15pt;
+    color: #FFF;
+}
+
+.button:before{
+    display: inline-block;
+    background: #FFC31F;
+    margin-right: 1em;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: #272925;
+}
+
+
+.title{
+    margin-bottom: 3em;
+}
+
+.title h2{
+    text-transform: uppercase;
+    font-size: 35pt;
+}
+
+.title .under1 p{
+    font-size: 1.7em;
+    color: #6F6F6F;
+margin: 1px;
+}
+
+
+.boxA,
+.boxB,
+.boxC{
+    width: 320px;
+float: left;
+    margin-right: 20px;
+}
+
+.boxA{
+margin-left: 40px;
+}
+
+
+
+.tbox1,
+.tbox2{
+    width: 575px;
+}
+
+.tbox1{
+    float: left;
+}
+
+.tbox2{
+    float: right;
+}
+
+#wrapper{
+    background: #FFF;
+}
+
+
+#header-wrapper{
+    background: #333333;
+position: fixed;
+z-index: 9999;
+  top: 0;
+left: 0;
+z-index: 9999;
+width: 100%;
+height: 90px;
+opacity: 0.96;
+}
+
+#header{
+    position: relative;
+    padding: 3em 0em;
+}
+
+
+#logo{
+    position: absolute;
+    top: 32px;
+    left: 0;
+}
+
+#logo h1{
+    color: #FFF;
+}
+
+#logo a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+
+.nav{
+    position: absolute;
+    top: 40px;
+    right: 0;
+
+}
+
+.nav ul{
+    display: inline-block;
+}
+
+.nav li{
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+.nav li a, .nav li span{
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #FFF;
+}
+
+.nav li:hover a, .nav li.active a, .nav li.active span{
+    color: #FFF;
+background: #009E2D;
+border-radius: 2px;
+}
+
+.nav .current a{
+    background: #009E2D;
+    color: #FFF;
+}
+
+.nav .burger-knap{
+display:hidden;
+width: 40px;
+height: 40px;
+background: url(http://www.nibeinternational.com/wp-content/themes/icats/images/mobile-menu-icon.png) center;
+}
+
+
+#banner{
+    overflow: hidden;
+    padding: 7em 0em 5em 0em;
+    background: #202020;
+    background-size: cover;
+    text-align: center;
+    color: rgba(255,255,255,.8);
+}
+
+#banner .title{
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+#banner .title h2{
+    color: #FFF;
+}
+
+#banner .title .under{
+    color: rgba(255,255,255,.6);
+}
+
+#banner .button{
+    margin-top: 46px;
+    background: #00902D;
+}
+
+
+#page{
+    padding: 5em 0em;
+    text-align: center;
+}
+
+#page .button{
+    margin-top: 2em;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+
+#copyright{
+    overflow: hidden;
+    padding: 5em 0em;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+#copyright p{
+    text-align: center;
+    font-size: 1em;
+    color: rgba(255,255,255,0.5);
+}
+
+#copyright a{
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+}
+
+
+#featured{
+    overflow: hidden;
+    padding: 5em 0em;
+    background: #009E2D;
+    color: rgba(255,255,255,.8);
+    text-align: center;
+}
+
+#featured a{
+    color: rgba(255,255,255,1);
+}
+
+#featured .button{
+    background: #FFF;
+    margin-top: 3em;
+    font-size: 1em;
+    color: #009E2D;
+}
+
+
+#featured .title h2{
+    color: #FFF;
+}
+
+#featured .title .under{
+    color: rgba(255,255,255,.6);
+}
+
+.box{
+padding: 3em 2em 2em 2em;
+border: 1px solid rgba(0,0,0,0.1);
+border-radius: 8px;
+    text-align: center;
+}
+
+
+#extra{
+    overflow: hidden;
+    padding: 10% 0;
+}
+.clear{
+margin: 30px;
+}
+#extra .title{
+    text-align: center;
+}
+
+#extra .button{
+    margin-top: 5em;
+}
+
+.actions .buy .button{
+margin-top: 10000;
+}
+
+
+
+@media screen and (max-width: 816px){
+.burger-knap{
+display: inline-block;
+}
+
+.nav ul, .nav:active ul{
+display: none;
+position: absolute;
+padding: 20px;
+background: #405580;
+border: 1px solid #fff;
+right: 20px;
+top: 60px;
+width: 50%;
+border-radius: 2px 0 2px 2px;
+}
+
+.nav li {
+text-align: center;
+width: 100%;
+padding: 10px 0;
+margin: 0;
+}
+
+.burger-knap{
+margin-top: -12px;
+}
+
+.nav:hover ul{
+display: block;
+}
+
+a: hover .burger-knap{
+border-radius: 4px 4px 0 0;
+}
+
+.boxA, .boxB, .boxC{
+margin: 5px auto;
+text-align: center;
+display: block;
+float: none;
+}
+
+.boxC{
+margin-bottom: 0;
+}
+}
+
+
+
+
+.blueButton {
+-moz-box-shadow: inset 0px -3px 7px 0px #29bbff;
+-webkit-box-shadow: inset 0px -3px 7px 0px #29bbff;
+box-shadow: inset 0px -3px 7px 0px #29bbff;
+background-color: #0088BB;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+border: 1px solid #0088BB;
+display: inline-block;
+cursor: pointer;
+color: #fff;
+font-family: Arial;
+font-size: 15px;
+padding: 9px 23px;
+text-decoration: none;
+text-shadow: 0px 1px 0px #263666;
+}
+
+.blueButton:hover {
+background-color: #369cb8;
+}
+
+.blueButton:active {
+position: relative;
+top: 1px;
+}
+
+
+.payment input[type=text] {
+width: 95%;
+padding: 12px 20px;
+margin: 8px 0;
+display: block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+resize: none;
+text-align: left;
+}
+
+.payment input[type=text]:focus {
+border: 1px solid #a8a8a8;
+}
+
+.payment input[type=submit],
+.payment input[type=button] {
+float: right;
+margin: -20px 20px 10px 0px;
+}
+
+.payment {
+border-radius: 5px;
+background-color: #f8f8f8;
+padding: 40px;
+width: 40%;
+margin: 0 auto;
+margin-top: 20px;
+box-shadow: 1px 1px 5px #888888;
+}
+
+.credit-card-box .panel-title {
+display: inline;
+font-weight: bold;
+}
+.credit-card-box .form-control.error {
+border-color: red;
+outline: 0;
+box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+font-weight: bold;
+color: red;
+padding: 2px 8px;
+margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+font-weight: bold;
+color: red;
+padding: 2px 8px;
+margin-top: 2px;
+}
+.credit-card-box label {
+display: block;
+}
+
+.credit-card-box .display-table {
+display: table;
+}
+.credit-card-box .display-tr {
+display: table-row;
+}
+.credit-card-box .display-td {
+display: table-cell;
+vertical-align: middle;
+width: 50%;
+}
+.credit-card-box .panel-heading img {
+min-width: 180px;
+}
+
+
+
+/* Coden er hentet fra https://codepen.io/m-web/pen/pyVpOq?editors=1100 ;) */
+@media screen and (max-width: 1180px){
+.boxA, .boxB, .boxC{
+margin: 5px auto;
+text-align: center;
+display: block;
+float: none;
+}
+
+.boxC{
+margin-bottom: 0;
+}
+
+}
+
+</style>
+
+
+<html>
+
+<head>
+
+  <title>Payment</title>
+  
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="header-wrapper">
+      <div id="header" class="container">
+        <div id="logo">
+          <h4><a href="/dashboard/menu"><img src="" alt="" /><i class="fas fa-arrow-left"></i> Back </a></h4>
+        </div>
+        <div class="nav">
+        </div>
+      </div>
+    </div>
+    <div id="banner">
+      <div class="container">
+        <div class="title">
+          <h2>You're almost there!</h2>
+          <span class="under">We give you the best services</span> </div>
+       </div>
+    </div>
+    <div id="extra" class="container">
+      <div class="title">
+        <h2>Thank you for choosing us!</h2>
+        <% include ./partials/messages %>
+        
+        
+        
+        
+        
+        <form class="payment" action="/dashboard/confirmpayment" method="POST" >
+
+		<div class="panel panel-default credit-card-box">
+			<div class="panel-heading display-table">
+				<div class="row display-tr">
+					<h3 class="panel-title display-td">Payment of ₹<%= amount %></h3>
+					<img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+				</div>
+			</div>
+		</div>
+		<br>
+		<label for="cardNumber">CARD NUMBER</label>
+		<input type="text" size="10" class="form-control" name="card" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus />
+		<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+		<label for="cardExpir">EXPIRATION DATE</label>
+		<input type="text" size="5" class="form-control" name="expire" placeholder="MM / YY" autocomplete="cc-exp" required />
+		<label for="cardCVC">CV CODE</label>
+		<input type="text" size="3" class="form-control" name="cvv" placeholder="CVC" autocomplete="cc-csc" required />
+		<label for="couponCode">Card Owner Name</label>
+		<input type="text" class="form-control" name="owner" />
+		<br>
+		<button class="blueButton" style="float:right;" type="submit">Confirm Payment</button>
+		<br><br>
+</form>
+
+</form>
+
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+      </div>
+      </div>
+  
+  <div id="copyright" class="container">
+    <p>&copy; Copyright-2019 FOODCLOUD
+      <h></h>
+    All rights reserved.</p>
+  </div>
+</body>
+
+</html>

@@ -5,6 +5,9 @@ const Table = require("../models/Table");
 const Menu = require("../models/Menu");
 const Request = require('../models/requests')
 
+
+
+
 // Welcome Page
 router.get('/',(req, res)=> res.render('welcome'));
 
@@ -110,8 +113,8 @@ router.post('/dashboard/menu',ensureAuthenticated,(req, res)=>{
     }
     var tax = (18/100*totCost);
     totCost+=tax;
-    console.log(totCost+"  "+tax);
-    console.log(m);
+ //   console.log(totCost+"  "+tax);
+  //  console.log(m);
    res.render("payment",{m,totCost,tax});
   }).catch(err => console.log(err));
 
@@ -132,10 +135,53 @@ router.get('/dashboard/setting',ensureAuthenticated,(req, res)=>{
   res.send("Settinhs works");
 });
 
-//Payment
-router.get('/dashboard/menu/payment',ensureAuthenticated,(req, res)=>{
-  res.send("payment");
+
+router.post('/dashboard/confirmpayment',ensureAuthenticated,(req, res)=>{
+
+
+
+
+  let errors=[];
+  const card=req.body.card;
+  const cvv=req.body.cvv;
+  const expire=req.body.expire;
+  const owner = req.body.owner;
+  const amount=req.body.amount;
+
+   var regex = new RegExp("^[0-9]{16}$");
+   var cvvregex = new RegExp("^[0-9]{3}$");
+   var dateregex = new RegExp("^[0-9]{2}/[0-9]{2}$");
+    
+   var month=parseInt(expire.substring(0,2));
+   var year=parseInt(expire.substring(3));
+
+
+
+    if (!regex.test(card))
+      errors.push({msg:"Please enter the correct 16 digit card number"});
+
+    
+    if(!cvvregex.test(cvv))
+      errors.push({msg:"Please enter the correct 3 digit CVV number"});
+    
+    if(!dateregex.test(expire))
+    errors.push({msg:"Please enter the correct date"});
+
+    if(year<19)
+    errors.push({msg:"Card has already expired"});
+
+    if(year==19 && month<11)
+      errors.push({msg:"Card has already expired"});
+
+   if(errors.length > 0)
+      res.render("pay",{errors,amount});
 });
+
+//Payment
+router.post('/dashboard/menu/payment',ensureAuthenticated,(req, res)=>{
+  res.render("pay",{amount:req.body.amount});
+});
+
 
 //REnder contact page
 router.get('/dashboard/contact',ensureAuthenticated,(req, res)=>{
