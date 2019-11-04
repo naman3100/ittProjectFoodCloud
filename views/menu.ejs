@@ -1,572 +1,500 @@
+<link rel="stylesheet" href="../css/menu.css" type="text/css">
 
-    <link rel="stylesheet" href="../css/menu.css" type="text/css">
 
-   
 
-    
-    <head>
-            <meta charset="UTF-8">
-          
-            <title>The Den - Home</title>
-          
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-            <link rel='stylesheet' href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css'>
-            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-            <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
-            <link rel="stylesheet" href="css/style.css">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-        </head>
-    
 
-        <header>
-        <nav>
-          <h2><a href="/dashboard" id="logo">FOODCLOUD</a></h2>
-          <button class="nav-button fa fa-bars"></button>
-          <div>
-      <!--     <ul> -->
-      <ul>
-        <button class="exit-menu fa fa-times"></button>
-        <li><a href="/dashboard">welcome</a></li>
-        <li><a href="/dashboard/menu" class="active">menu</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">team</a></li>
-        <li><a href="#">contact</a></li>
-      </ul>
-      <!--     </ul> -->
-          </div>
-        </nav>
-        <div class="center">
-          <h1 class="alex-brush">Welcome</h1>
-          <h2>the den</h2>
-          <span id="asterisk">*</span>
-          <p>everyone is welcome</p>
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<header>
+       
+    <nav>
+        <h2><a href="/dashboard" id="logo"><strong><i class="fas fa-arrow-left"></i> Back</strong></a></h2>
+        <button class="nav-button fa fa-bars"></button>
+        <div>
+            <!--     <ul> -->
+            <!--     </ul> -->
         </div>
-      </header>
-      <!-- Our Menu section starts -->
-              <section id="our-menu">
-                  <div class="container">
-                    <div class="center-text-menu">
-                      <h1 class="alex-brush"><span class="custom-font">Discover</span><br />OUR MENU</h1>
-                      <h2>*</h2>
-                    </div>
-                      <div class="menu-table">
-                          <!-- Menu tabs -->
-                          <ul class="nav nav-tabs  menu-tabs" role="tablist">
-                              <li class="active">
-                                  <a href="#soups-salads-appetizers" aria-controls="soups-salads-appetizers" role="tab" data-toggle="tab" class="icon icon-home"><span>Breakfast</span></a>
+    </nav>
+    <div class="center">
+        <h1 class="alex-brush">Our Menu</h1>
+        <h2>If it doesn't taste good it doesn't go on the menu.</h2>
+        <span id="asterisk">*</span>
+        <p>We don’t make it ‘til you order it.</p>
+    </div>
+</header>
+<!-- Our Menu section starts -->
+<% include ./partials/messages %>
+<form action="/dashboard/menu" method="POST">
+    <section id="our-menu">
+        <div class="container">
+            <div class="center-text-menu">
+                <h1 class="alex-brush"><span class="custom-font">Discover</span><br />OUR MENU</h1>
+               
+                
+            </div>
+            <div class="menu-table">
+                <!-- Menu tabs -->
+                <ul class="nav nav-tabs  menu-tabs" role="tablist">
+                    <li class="active">
+                        <a href="#soups-salads-appetizers" aria-controls="soups-salads-appetizers" role="tab" data-toggle="tab" class="icon icon-home"><span>Breakfast</span></a>
+                    </li>
+                    <!--li>
+                                  <a href="#organic-Pastas" aria-controls="prganic-Pastas" role="tab" data-toggle="tab">Lunch</a>
                               </li>
                               <li>
-                                  <a href="#organic-pastas" aria-controls="prganic-pastas" role="tab" data-toggle="tab">Lunch</a>
-                              </li>
-                              <li>
-                                  <a href="#pizza" aria-controls="pizza" role="tab" data-toggle="tab">Dinner</a>
+                                  <a href="#Pizza" aria-controls="Pizza" role="tab" data-toggle="tab">Dinner</a>
                               </li>
                               <li>
                                   <a href="#entrees" aria-controls="entrees" role="tab" data-toggle="tab">Desserts</a>
-                              </li>
-                              <li>
-                                  <a href="#desserts" aria-controls="desserts" role="tab" data-toggle="tab">Drinks</a>
-                              </li>
-                          </ul>
-      
-                          <!-- Menu Tab panes -->
-                          <div class="tab-content">
-                              <div class="tab-pane active fade in" id="soups-salads-appetizers">
-                                  <div class="row">
-                                      <div class="menu-group">
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
-                                                  <span class="menu-title">Crispy Risotto Balls</span>
-                                                  <span class="menu-descp">mozzarella, Grana Padano, herb aioli, marinara</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 34
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
-                                                  <span class="menu-title">Minestrone Soup</span>
-                                                  <span class="menu-descp">cranberry beans, vegetables, Grana Padano</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 45
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
-                                                  <span class="menu-title">Lentil Soup</span>
-                                                  <span class="menu-descp">parmesan chicken broth, potato, bacon, Grana Padano, parsley</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 54
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
-                                                  <span class="menu-title">Mixed Greens</span>
-                                                  <span class="menu-descp">red wine vinaigrette, pears, walnuts, goat cheese</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 23
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
-                                                  <span class="menu-title">Chopped Salad</span>
-                                                  <span class="menu-descp">chickpea, green olive, pistachio, pepperoni, oregano, red wine vinaigrette, pecorino</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 46
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
-                                                  <span class="menu-title">Orange Salad</span>
-                                                  <span class="menu-descp">green olives, red onions, tarragon, extra virgin olive oil</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 64
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
-                                                  <span class="menu-title">Shaved Kale</span>
-                                                  <span class="menu-descp">creamy anchovy dressing, pecorino, bread crumbs</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 75
-                                                  </span>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="tab-pane fade " id="organic-pastas">
-                                  <div class="row">
-                                      <div class="menu-group">
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Spaghetti Aglio e Olio</span>
-                                                  <span class="menu-descp">olive oil, garlic, chili, Grana Padano (add anchovy 2.00)</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 54
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Chitarra al Pomodoro</span>
-                                                  <span class="menu-descp">tomatoes, garlic, basil, Grana Padano</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
-                                                  <span class="menu-item-price">
-                                                      ₹ 87
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Pappardelle</span>
-                                                  <span class="menu-descp">smoked pork, mascarpone, apples</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 45
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Pistachio Ravioli</span>
-                                                  <span class="menu-descp">pistachio, mint, lemon brown butter, Grana Padano</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 43
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Garganelli</span>
-                                                  <span class="menu-descp">braised beef, olives, gremolata, Grana Padano</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 43
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Italian Ramen</span>
-                                                  <span class="menu-descp">spaghettini, soft cooked egg, chicken, basil, Grana Padano</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 87
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Lasagna Bianca</span>
-                                                  <span class="menu-descp">béchamel, butternut squash, onion, fontina, brown butter, sage</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 78
-                                                  </span>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="tab-pane fade " id="pizza">
-                                  <div class="row">
-                                      <div class="menu-group">
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Margherita</span>
-                                                  <span class="menu-descp">tomato, mozzarella, basil</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 38
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Pastaria Marinara</span>
-                                                  <span class="menu-descp">tomato, onion, garlic, oregano, basil, pecorino (very minimal cheese)</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 48
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Pappardelle</span>
-                                                  <span class="menu-descp">smoked pork, mascarpone, apples</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 73
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Four Cheese</span>
-                                                  <span class="menu-descp">mozzarella, fontina, gorgonzola dolce, Grana Padano (no tomato)</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 48
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Fennel Salami</span>
-                                                  <span class="menu-descp">tomato, mozzarella</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 43
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">The Holmes</span>
-                                                  <span class="menu-descp">tomato, mozzarella, mushroom, prosciutto, oregano, Grana Padano</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 75
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Sweet Potato</span>
-                                                  <span class="menu-descp">béchamel, fontina, red onion, lemon zest, herbs</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 38
-                                                  </span>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="tab-pane fade " id="entrees">
-                                  <div class="row">
-                                      <div class="menu-group">
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Wood Oven Roasted Chicken</span>
-                                                  <span class="menu-descp">roasted cauliflower, potato, lemon,caper, parsley</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 70
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Red Wine Braised Beef</span>
-                                                  <span class="menu-descp">creamy corn polenta, roasted baby carrots, parsley</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 30
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Wood Oven Roasted Salmon</span>
-                                                  <span class="menu-descp">fennel confit, farro, zucchini, calabrian chili, preserved lemon</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 49
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="tab-pane" id="desserts">
-                                  <div class="row">
-                                      <div class="menu-group">
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Mama Rodolico’s Tiramisu</span>
-                                                  <span class="menu-descp">roasted cauliflower, potato, lemon,caper, parsley</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 53
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Dark Chocolate Tart</span>
-                                                  <span class="menu-descp">whipped cream and candied hazelnuts</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 37
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Yoghurt Panna Cotta</span>
-                                                  <span class="menu-descp">cherry compote</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 73
-                                                  </span>
-                                              </div>
-                                          </div>
-      
-                                          <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
-                                              <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
-                                                  <img src="http://gdurl.com/caeA" alt="" class="img-circle">
-                                              </div>
-                                              <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                                                  <span class="menu-title">Cannoli</span>
-                                                  <span class="menu-descp">pastry cream with strawberry balsamic and salted pistachios</span>
-                                              </div>
-                                              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-                                                  <span class="menu-item-price">
-                                                      ₹ 48
-                                                  </span>
-                                              </div>
-                                          </div>
-      
+                              </li-->
+                    <li>
+                        <a href="#desserts" aria-controls="desserts" role="tab" data-toggle="tab">Desserts</a>
+                    </li>
+                </ul>
+
+                <!-- Menu Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active fade in" id="soups-salads-appetizers">
+                        <div class="row">
+                            <div class="menu-group">
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/sprolls.jpg" alt="" class="img-circle">
                                     </div>
-                                  </div>
-                              </div>
-      
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Crispy Dragon Rolls</span>
+                                        <span class="menu-descp">Deep Fried Dragon Chicken Rolls served with veggies and marinera sauce</span>
+
+
+                                        <input type="checkbox" id="Dragon Roll" name="Dragon Roll" value="299">
+                                        <label for="Dragon Roll">Select Item </label> Select Quantity:
+                                        <select name="Dragon Rollplates" id="Dragon Rollplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 299
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+
+
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/orings.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Onion Rings</span>
+                                        <span class="menu-descp">Onion Rings,served with mayonnaise and ketchup sauce</span>
+                                        <input type="checkbox" id="Onion Rings" name="Onion Rings" value="149">
+                                        <label for="Onion Rings">Select Item </label> Select Quantity:
+                                        <select name="Onion Ringsplates" id="Onion Ringsplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 149
+                                                  </span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/fries.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">French Fries</span>
+                                        <span class="menu-descp">Deep Fried, Served with mayonnaise and ketchup</span>
+                                        <input type="checkbox" id="Fries" name="Fries" value="199">
+                                        <label for="Fries">Select Item </label> Select Quantity:
+                                        <select name="Friesplates" id="Friesplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+
+                                    </div>
+
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 199
+                                                  </span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="https://www.kingsford.com/wp-content/uploads/2014/11/kfd-howtohamburger-Burgers_5_0391-1024x621.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Sloppy Joe</span>
+                                        <span class="menu-descp">Delicious Hamburger served with Fries on the side</span>
+                                        <input type="checkbox" id="Burger" name="Burger" value="399">
+                                        <label for="Burger">Select Item </label> Select Quantity:
+                                        <select name="Burgerplates" id="Burgerplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 399
+
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="https://www.planetveggie.co.uk/wp-content/uploads/2014/08/spinach-pesto-mozzarella-pasta.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Spinach Pasta</span>
+                                        <span class="menu-descp">Pasta made with fresh Baby spinach, olive oil, pecorino romano cheese</span>
+                                        <input type="checkbox" id="Pasta" name="Pasta" value="349">
+                                        <label for="Pasta">Select Item </label> Select Quantity:
+                                        <select name="Pastaplates" id="Pastaplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 349
+                                                  </span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="https://i.kinja-img.com/gawker-media/image/upload/wafswectpmbr0zmug9ly.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Pizza</span>
+                                        <span class="menu-descp">Pizza with Pepperoni,Mozzarella cheese, olive oil, tomatoes, plain flour, garlic. Served with oregano seasoning</span>
+                                        <input type="checkbox" id="Pizza" name="Pizza" value="799">
+                                        <label for="Pizza">Select Item </label> Select Quantity:
+                                        <select name="Pizzaplates" id="Pizzaplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 799
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="https://cdn.instructables.com/FY0/BMNB/IB226AMH/FY0BMNBIB226AMH.MEDIUM.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Meatball Spaghettihetti</span>
+                                        <span class="menu-descp">Red Sauce Spaghettihetti served with delicious chicken meat balls</span>
+                                        <input type="checkbox" id="Spaghetti" name="Spaghetti" value="499">
+                                        <label for="Spaghetti">Select Item </label> Select Quantity:
+                                        <select name="Spaghettiplates" id="Spaghettiplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 499
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="http://assets.simplyrecipes.com/wp-content/uploads/2011/04/17174801/mushroom-risotto-horiz-a-1800.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Mushroom Risotto</span>
+                                        <span class="menu-descp">Risotto with White wine, oyster mushrooms, arborio rice, parmesan cheese, butter</span>
+                                        <input type="checkbox" id="Risotto" name="Risotto" value="299">
+                                        <label for="Risotto">Select Item </label> Select Quantity:
+                                        <select name="Risottoplates" id="Risottoplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 299
+                                                  </span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/noodles.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">Shanghai Noodles</span>
+                                        <span class="menu-descp">Oriental Noodles made with diced chicken ,served with our special sauces</span>
+                                        <input type="checkbox" id="Noodles" name="Noodles" value="299">
+                                        <label for="Noodles">Select Item </label> Select Quantity:
+                                        <select name="Noodlesplates" id="Noodlesplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 299
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/chopsuey.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-9">
+                                        <span class="menu-title">American Chopsueysuey</span>
+                                        <span class="menu-descp">Classic Chopsueysuey made with Chow mein and paprika</span>
+                                        <input type="checkbox" id="Chopsuey" name="Chopsuey" value="699">
+                                        <label for="Chopsuey">Select Item </label> Select Quantity:
+                                        <select name="Chopsueyplates" id="Chopsueyplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3">
+                                        <span class="menu-item-price">
+                                                      ₹ 699
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
+                    <div class="tab-pane" id="desserts">
+                        <div class="row">
+                            <div class="menu-group">
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/cupcake.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                                        <span class="menu-title">FoodCloud's Cupcakes</span>
+                                        <span class="menu-descp">Our special self baked delicacy topped with chocolate chips </span>
+                                        <input type="checkbox" id="Cupcakes" name="Cupcakes" value="149">
+                                        <label for="Cupcakes">Select Item </label> Select Quantity:
+                                        <select name="Cupcakesplates" id="Cupcakesplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                                        <span class="menu-item-price">
+                                                      ₹ 149
+                                                  </span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/waffle.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                                        <span class="menu-title">Chocolate Wafflesles</span>
+                                        <span class="menu-descp"> Served withwhipped cream and candied hazelnuts</span>
+                                        <input type="checkbox" id="Waffles" name="Waffles" value="249">
+                                        <label for="Waffles">Select Item </label> Select Quantity:
+                                        <select name="Wafflesplates" id="Wafflesplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                                        <span class="menu-item-price">
+                                                      ₹ 249
+                                                  </span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="../images/pastry.jpg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                                        <span class="menu-title">Banana Pastry</span>
+                                        <span class="menu-descp">Fresh Baked Pastry with chocolate icing</span>
+                                        <input type="checkbox" id="Pastry" name="Pastry" value="199">
+                                        <label for="Pastry">Select Item </label> Select Quantity:
+                                        <select name="Pastryplates" id="Pastryplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                                        <span class="menu-item-price">
+                                                      ₹ 199
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-group-item clearfix col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-md-3 col-lg-3 col-sm-3 hidden-xs">
+                                        <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/4/24/2/ED0203_homemade-cannoli_s4x3.jpg.rend.hgtvcom.826.620.suffix/1433592011573.jpeg" alt="" class="img-circle">
+                                    </div>
+                                    <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                                        <span class="menu-title">Cannoli</span>
+                                        <span class="menu-descp">Pastry cream with strawberry balsamic and salted pistachios</span>
+                                        <input type="checkbox" id="Cannoli" name="Cannoli" value="199">
+                                        <label for="Cannoli">Select Item </label> Select Quantity:
+                                        <select name="Cannoliplates" id="Cannoliplates">
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+                                        <span class="menu-item-price">
+                                                      ₹ 199
+                                                  </span>
+                                        <span><img src="../images/nveg.jpg" class ="nv"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-      </section>
-      
-      <footer>
-        <button class="to-top"><i class="fa fa-chevron-up"></i>TOP</button>
-      
-        <div class="restaurant-info">
-      
-          <div class="locations">
+            </div>
+        </div>
+        <div class="text-center">
+        <button type="submit" name="submit" class='btn btn-primary pt-3'> Place Order</button>
+    </div>
+</form>
+</section>
+
+<footer>
+    <!--button class="to-top"><i class="fa fa-chevron-up"></i>TOP</button-->
+
+    
+
+    <div class="restaurant-info">
+
+        <div class="locations">
             <h4>LOCATIONS</h4>
             <div class="location-1">
-              <h5>16-17 Bridge Street<br />Hereford &#8212; HR4 9DF</h5>
-            </div><!--location-1-->
-          </div><!--locations end-->
-      
-          <div class="hours">
+                <h5>16-17 Bridge Street<br />Hereford &#8212; HR4 9DF</h5>
+            </div>
+            <!--location-1-->
+        </div>
+        <!--locations end-->
+
+        <div class="hours">
             <h4>HOURS</h4>
             <div class="weekdays">
-              <h5>Monday - Friday<br />
-                8:00am - 10:00pm
-              </h5>
-            </div><!--weekdays end-->
-      
-            <div class="weekends">
-              <h5>Saturday<br />
-                9:00am - 11:00pm
-              </h5>
-            </div><!--weekends end-->
-      
-            <div class="private-events">
-              <h5>Sunday<br />
-                9:00am - 4:00pm
-              </h5>
+                <h5>Monday - Friday<br /> 8:00am - 10:00pm
+                </h5>
             </div>
-      
-          </div><!--hours end-->
-      
-        </div><!--restaurant-info end-->
-      
-        <div class="copyright">
-          <p><small>Copyright 2019 &#169; Create and Developed By <span>Adam Media</span></small></p>
-        </div>
-      
-      </footer>
-      
+            <!--weekdays end-->
 
-      <script type="text/javascript" src="../js/menu.js"></script>
+            <div class="weekends">
+                <h5>Saturday<br /> 9:00am - 11:00pm
+                </h5>
+            </div>
+            <!--weekends end-->
+
+            <div class="private-events">
+                <h5>Sunday<br /> 9:00am - 4:00pm
+                </h5>
+            </div>
+
+        </div>
+        <!--hours end-->
+
+    </div>
+    <!--restaurant-info end-->
+
+    <div class="copyright">
+        <p><small>Copyright 2019 &#169; Create and Developed By <span>Adam Media</span></small></p>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript" src="../js/menu.js"></script>

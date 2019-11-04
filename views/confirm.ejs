@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" href="../css/confirm.css">
+
+<div class='text-center'>
+     <img style='width: 300px; height: 157px' alt='Events High' src='../images/foodcloud.png'/> </a>
+  </div>
+
+  <div class="send-container">
+    <div class="success-wrp">
+      <div class="success-icon-wrp">
+        <div class="success-icon">
+          <img src="https://assets.eventshigh.com/organizer_payment_images/Star.png">
+        </div>
+        <div class="success-tick">
+          <img src="https://assets.eventshigh.com/organizer_payment_images/tick.png">
+        </div>
+      </div>
+      <div class="success-price-wrp clearfix">
+        <div class="success-price-icon">&#8377;</div>
+        <div class="success-price-text"><%= amount %></div>
+      </div>
+      <div class="success-send-to">Sent Successfully to</div>
+      <div class="success-reciever-text">FOODCLOUD</div>
+    </div>
+  
+
+<div class='alert alert-success'>
+  Payment was successful.
+  Please wait while we redirect you to Home page ...
+</div>
+</div>
+      <script>
+        setTimeout(function () {
+           // after 2 seconds
+           window.location = "/dashboard";
+        }, 10000)
+      </script>

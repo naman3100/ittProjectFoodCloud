@@ -19,12 +19,25 @@ const UserSchema = new mongoose.Schema({
     },
     booking:{
         confirm:{
-            type:Boolean,
-            default:false
+            type:String
         },
         tableno:{
             type:String
         }
+    },
+    address:{
+        mainAddress:{
+            type:String
+        },
+        state:{
+            type:String
+        },
+        zipcode:{
+            type:String
+        }
+    },
+    ph:{
+        type:String
     }
 });
 

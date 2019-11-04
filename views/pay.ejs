@@ -568,14 +568,15 @@ margin-bottom: 0;
 		</div>
 		<br>
 		<label for="cardNumber">CARD NUMBER</label>
-		<input type="text" size="10" class="form-control" name="card" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus />
+		<input type="text" size="10" maxlength="16" class="form-control" name="card" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus />
 		<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
 		<label for="cardExpir">EXPIRATION DATE</label>
 		<input type="text" size="5" class="form-control" name="expire" placeholder="MM / YY" autocomplete="cc-exp" required />
 		<label for="cardCVC">CV CODE</label>
-		<input type="text" size="3" class="form-control" name="cvv" placeholder="CVC" autocomplete="cc-csc" required />
+		<input type="password" maxlength="3" size="3" class="form-control" name="cvv" placeholder="CVC" autocomplete="cc-csc" required />
 		<label for="couponCode">Card Owner Name</label>
-		<input type="text" class="form-control" name="owner" />
+        <input type="text" class="form-control" name="owner" />
+        <input name="amount" value="<%= amount %>"  hidden/>
 		<br>
 		<button class="blueButton" style="float:right;" type="submit">Confirm Payment</button>
 		<br><br>

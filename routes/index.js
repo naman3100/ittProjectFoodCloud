@@ -4,8 +4,97 @@ const  { ensureAuthenticated } = require('../config/auth');
 const Table = require("../models/Table");
 const Menu = require("../models/Menu");
 const Request = require('../models/requests')
+const Feedback = require('../models/Feedback')
+const User = require('../models/User');
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
+
+//Send Grid api for sending email
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('');
+
+//Cook functionality
+router.get('/cook/login',(req,res)=>{
+  res.render("cookLogin")
+})
+
+//cook login
+router.post('/cook/login',(req,res)=>{
+  let errors= [];
+  var name=req.body.name;
+  var password =req.body.password;
+
+  // if(!(name=="1234567"))
+  // {
+  //   errors.push({msg:"Only cooks are allowed to login"});
+  //   return res.render("cookLogin",{errors});
+  // }
+
+  // if(!(password=="cooks101"))
+  // {
+  //     errors.push({msg:"Hey Cook you have entered a wrong password"});
+  //     return res.render("adminLogin",{errors});
+  // }
+  var data = [];
+  var i=0;
+  
+
+  Menu.find({}, function(err, users) {
+    
+
+    users.forEach(function(user) {
+      data[i++] = user;
+    });
+    //res.send(data)
+    res.render("cook",{data});  
+  });
+
+ //console.log(User.find());
+
+  //res.send("yo baby")
+  
+})
 
 
+//Admin functionality
+router.get('/admin/login',(req,res)=>{
+  res.render("adminLogin")
+})
+
+//Admin login
+router.post('/admin/login',(req,res)=>{
+  let errors= [];
+  var name=req.body.name;
+  var password =req.body.password;
+
+  if(!(name=="admin"))
+  {
+    errors.push({msg:"Only owner is allowed to login"});
+    return res.render("adminLogin",{errors});
+  }
+
+  if(!(password=="foodcloud101"))
+  {
+      errors.push({msg:"Hey Adim, you have entered the wrong password"});
+      return res.render("adminLogin",{errors});
+  }
+  var data = [];
+  var i=0;
+  User.find({}, function(err, users) {
+    
+
+    users.forEach(function(user) {
+      data[i++] = user;
+    });
+
+    res.render("customer",{data});  
+  });
+
+ //console.log(User.find());
+
+  //res.send("yo baby")
+  
+})
 
 
 // Welcome Page
@@ -43,7 +132,7 @@ router.get('/dashboard',ensureAuthenticated ,(req, res)=>
     else if(!table)
     {
       const author = {userId,userName};
-      console.log(author);
+     // console.log(author);
       const newTable = new Table({name, no, booking:true,author:{id: userId,username: userName}});
       newTable.save().then((table)=>{
         req.flash('success_msg', 'You have successfully booked a table');
@@ -63,10 +152,9 @@ router.get('/dashboard',ensureAuthenticated ,(req, res)=>
       table.save().then(t=>{
         
         //User booking table
-        req.user.booking.confirm=true;
-        req.user.booking.tableno=no;
+        User.findOneAndUpdate({_id:req.user._id},{booking:{confirm:"1",tableno:no}}).then((y)=>console.log(y));
 
-        req.user.save().then((user)=>console.log("User booking confirmed"));
+        
 
         //Flash message for booking successful
         req.flash('success_msg', 'You have successfully booked a table');
@@ -78,30 +166,37 @@ router.get('/dashboard',ensureAuthenticated ,(req, res)=>
 
  //Menu 
  router.get('/dashboard/menu',ensureAuthenticated,(req, res)=>{
-  res.render("menueg.ejs");
+  res.render("menu.ejs");
 });
 
 //Menu post request
 router.post('/dashboard/menu',ensureAuthenticated,(req, res)=>{
+  let errors=[];
   var food = [];
   const userId=req.user._id;
   const userName = req.user.name;
-  var variety = ["pizza","pasta","burger","macroni"];
+  var variety = ["Dragon Roll","Onion Rings","Fries","Burger","Pasta","Pizza","Spaghetti","Risotto","Noodles","Chopsuey","Cupcakes","Waffles","Pastry","Cannoli"];
   for(var i in req.body)
   {
     for(var j=0;j<variety.length;j++)
     {
-      if(i==variety[j] && req.body[i+"Plates"]!='')
+      if(i==variety[j] && req.body[i+"plates"]!='')
       {
         var ob = {
           name : i,
           cost : req.body[i],
-          plates : req.body[i+"Plates"]
+          plates : req.body[i+"plates"]
         }
         food.push(ob);
       }
     }
   } 
+
+  if(food.length == 0)
+    errors.push({msg:"You have not selected any item"});
+
+  if(errors.length > 0)
+    return res.render("menu",{errors});
   
   const newMenu = new Menu({food:food,author:{id: userId,username: userName}});
   newMenu.save().then((menu)=>{
@@ -111,8 +206,8 @@ router.post('/dashboard/menu',ensureAuthenticated,(req, res)=>{
     {
       totCost += ((Number)(m[k].cost)*(Number)(m[k].plates));
     }
-    var tax = (18/100*totCost);
-    totCost+=tax;
+    var tax = Math.floor(18/100*totCost);
+    totCost=Math.floor(totCost+tax);
  //   console.log(totCost+"  "+tax);
   //  console.log(m);
    res.render("payment",{m,totCost,tax});
@@ -127,27 +222,146 @@ router.get('/dashboard/status',ensureAuthenticated,(req, res)=>{
 
 //Service feedback and tip
 router.get('/dashboard/feedback',ensureAuthenticated,(req, res)=>{
-  res.send("Feedback works");
+  res.render("feedback");
+});
+
+router.post('/dashboard/feedback',ensureAuthenticated,(req, res)=>{
+  const userId=req.user._id;
+  const userName = req.user.name;
+  const rating = req.body.feedback;
+  const message= req.body.message;
+  const newFeedback = new Feedback({review:{rating:rating,message:message},author:{id: userId,username: userName}});
+
+  newFeedback.save().then((feedback)=>{
+    res.render("successFeedback");
+  })
 });
 
 //Privacy settings
 router.get('/dashboard/setting',ensureAuthenticated,(req, res)=>{
-  res.send("Settinhs works");
+  const name = req.user.name;
+  const email = req.user.email;
+  const mainAddress=req.user.address.mainAddress;
+  const state=req.user.address.state;
+  const zipcode = req.user.address.zipcode;
+  const ph=req.user.ph;
+  res.render("setting",{name,
+    mainAddress,
+    zipcode,
+    ph,
+    state,
+    email});
+});
+
+//Post for settings
+router.post('/dashboard/setting',ensureAuthenticated,(req, res)=>{
+  const name = req.body.name;
+  const mainAddress = req.body.mainAddress;
+  const zipcode = req.body.zipcode;
+  const state = req.body.state;
+  const ph = req.body.ph;
+ 
+  const email=req.body.email;
+  var regex = new RegExp("^[0-9]{10}$");
+  var regex1 = new RegExp("^[0-9]{6}$");
+  let errors = [];
+  
+   
+
+  
+
+   if (ph!=null && !regex.test(ph))
+   {
+    console.log("ph check")
+      errors.push({msg:"Please enter the correct 10 digit card number"});
+   }
+    if (zipcode!=null && !regex1.test(zipcode))
+    {
+      console.log("zipcode")
+      errors.push({msg:"Please enter the correct 6 digit correct"});
+    }
+      // if(tc!="on")
+      // {
+      //   console.log("tc")
+      //   errors.push({msg:"Please accept the terms and conditions"});
+      // }
+        if(errors.length > 0){
+          res.render('setting', {
+              errors,
+              name,
+              mainAddress,
+              zipcode,
+              state,
+              ph,
+              email
+          })
+      }
+      else{
+
+      //   const newUser = new User({
+      //     name:name,
+      //     password:password,
+      //     address:{mainAddress,state,zipcode},
+      //     ph:ph
+      // });
+
+    
+
+     
+      if(name!=null && name.length>0)
+      {
+        User.findOneAndUpdate({_id:req.user._id},{
+          name:name
+          // password:password,
+          // address:{mainAddress,state,zipcode},
+          // ph:ph
+      }).then((user)=>{console.log("Updated successfully"+user)})
+        .catch((err)=>{console.log("error")})  
+      }
+
+
+      if(mainAddress!=null && mainAddress.length>0)
+      {
+        User.findOneAndUpdate({_id:req.user._id},{
+         
+          address:{mainAddress,state,zipcode}
+         
+      }).then((user)=>{console.log("Updated successfully"+user)})
+        .catch((err)=>{console.log("error")})
+  
+      }
+
+
+      
+        if(ph!=null && ph.length>0)
+      {
+      User.findOneAndUpdate({_id:req.user._id},{
+       // name:name,
+      //  password:password,
+      //  address:{mainAddress,state,zipcode},
+        ph:ph
+    }).then((user)=>{console.log("Updated successfully"+user)})
+      .catch((err)=>{console.log("error")})
+
+
+     
+
+      }
+
+      
+      return res.redirect("/dashboard");
+    }
 });
 
 
 router.post('/dashboard/confirmpayment',ensureAuthenticated,(req, res)=>{
-
-
-
-
   let errors=[];
   const card=req.body.card;
   const cvv=req.body.cvv;
   const expire=req.body.expire;
   const owner = req.body.owner;
   const amount=req.body.amount;
-
+  
    var regex = new RegExp("^[0-9]{16}$");
    var cvvregex = new RegExp("^[0-9]{3}$");
    var dateregex = new RegExp("^[0-9]{2}/[0-9]{2}$");
@@ -173,8 +387,26 @@ router.post('/dashboard/confirmpayment',ensureAuthenticated,(req, res)=>{
     if(year==19 && month<11)
       errors.push({msg:"Card has already expired"});
 
+    if(month<0 || month>12)
+      errors.push({msg:"Please enter the correct date"});
+
    if(errors.length > 0)
-      res.render("pay",{errors,amount});
+     return res.render("pay",{errors,amount});
+
+
+  //sendgrid
+  const msg = {
+    to: req.user.email,
+    from: 'reachnamanagarwal@gmail.com',
+    subject: 'Order Placed Successfully',
+ //   text: 'Hello! ' + newUser.name +' ! You have successfully registered. Enjoy dining.',
+    html: '<strong>'+ 'Hello! ' + req.user.name +' ! You have successfully placed an order at food cloud. Enjoy dining.' +'</strong>'
+  };
+  sgMail.send(msg);
+
+   res.render("confirm",{amount});
+   
+  
 });
 
 //Payment

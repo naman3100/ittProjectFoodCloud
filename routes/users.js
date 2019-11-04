@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+var regex = new RegExp("^[0-9]{10}$");
+var regex1 = new RegExp("^[0-9]{6}$");
 
 //Validator
 var validator = require('validator');
@@ -23,13 +25,25 @@ router.get('/register',(req,res)=>res.render('register'));
 
 // Register handel post request
 router.post('/register',(req,res)=> {
-    const { name, email, password, password2 }=req.body;
+    const { name, email, password, password2, ph, mainAddress, zipcode, state }=req.body;
     let errors = [];
 
     //check required fields
-    if(!name || !email || !password || !password2)
+    if(!name || !email || !password || !password2 || !ph || !mainAddress || !zipcode)
     {
         errors.push({msg:"Please fill in all fields"});
+    }
+
+    if (!regex.test(ph))
+   {
+    console.log("ph check")
+      errors.push({msg:"Please enter the correct 10 digit phone number"});
+   }
+
+    if (!regex1.test(zipcode))
+    {
+      console.log("zipcode")
+      errors.push({msg:"Please enter the correct 6 digit correct"});
     }
 
     //Check password match
@@ -54,7 +68,11 @@ router.post('/register',(req,res)=> {
             name,
             email,
             password,
-            password2
+            password2,
+            ph,
+            zipcode,
+            mainAddress,
+            state
         })
     }
     else{
@@ -69,13 +87,19 @@ router.post('/register',(req,res)=> {
                     name,
                     email,
                     password,
-                    password2
+                    password2,
+                    ph,
+                    zipcode,
+                    mainAddress,
+                    state
                 });
             } else {
                 const newUser = new User({
                     name,
                     email,
-                    password
+                    password,
+                    address:{mainAddress,state,zipcode},
+                    ph
                 });
 
                 //Hash password
@@ -93,7 +117,7 @@ router.post('/register',(req,res)=> {
                             //Sengrid sending email
                             const msg = {
                                 to: newUser.email,
-                                from: 'aditya99prakash@gmail.com',
+                                from: 'reachnamanagarwal@gmail.com',
                                 subject: 'Welcome to FoodCloud',
                              //   text: 'Hello! ' + newUser.name +' ! You have successfully registered. Enjoy dining.',
                                 html: '<strong>'+ 'Hello! ' + newUser.name +' ! You have successfully registered. Enjoy dining.' +'</strong>'

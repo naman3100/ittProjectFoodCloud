@@ -2,7 +2,7 @@
   box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
   padding: 2mm;
   margin: 0 auto;
-  width: 44mm;
+  width: 80mm;
   background: #fff;
 }
 #invoice-POS ::selection {
@@ -14,19 +14,19 @@
   color: #fff;
 }
 #invoice-POS h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #222;
 }
 #invoice-POS h2 {
-  font-size: 0.9em;
+  font-size: 1.5em;
 }
 #invoice-POS h3 {
-  font-size: 1.2em;
+  font-size: 2em;
   font-weight: 300;
   line-height: 2em;
 }
 #invoice-POS p {
-  font-size: 0.7em;
+  font-size: 1.2em;
   color: #666;
   line-height: 1.2em;
 }
@@ -48,7 +48,7 @@
 #invoice-POS #top .logo {
   height: 60px;
   width: 60px;
-  background: url(../images/foodcloud.png) no-repeat;
+  background: url(http://michaeltruong.ca/images/logo1.png) no-repeat;
   background-size: 60px 60px;
 }
 #invoice-POS .clientlogo {
@@ -74,7 +74,7 @@
   border-collapse: collapse;
 }
 #invoice-POS .tabletitle {
-  font-size: 0.5em;
+  font-size: 0.9em;
   background: #eee;
 }
 #invoice-POS .service {
@@ -84,7 +84,7 @@
   width: 24mm;
 }
 #invoice-POS .itemtext {
-  font-size: 0.5em;
+  font-size: 1.2em;
 }
 #invoice-POS #legalcopy {
   margin-top: 5mm;
