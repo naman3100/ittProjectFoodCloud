@@ -24,17 +24,17 @@ router.post('/cook/login',(req,res)=>{
   var name=req.body.name;
   var password =req.body.password;
 
-  // if(!(name=="1234567"))
-  // {
-  //   errors.push({msg:"Only cooks are allowed to login"});
-  //   return res.render("cookLogin",{errors});
-  // }
+  if(!(name=="1234567"))
+  {
+    errors.push({msg:"Only cooks are allowed to login"});
+    return res.render("cookLogin",{errors});
+  }
 
-  // if(!(password=="cooks101"))
-  // {
-  //     errors.push({msg:"Hey Cook you have entered a wrong password"});
-  //     return res.render("adminLogin",{errors});
-  // }
+  if(!(password=="cook101"))
+  {
+      errors.push({msg:"Hey Cook you have entered a wrong password"});
+      return res.render("adminLogin",{errors});
+  }
   var data = [];
   var i=0;
   
@@ -78,6 +78,14 @@ router.post('/admin/login',(req,res)=>{
       errors.push({msg:"Hey Adim, you have entered the wrong password"});
       return res.render("adminLogin",{errors});
   }
+
+  res.render("adminPortal");
+ 
+  
+})
+
+//Admin customers
+router.get('/admin/customers',(req,res)=>{
   var data = [];
   var i=0;
   User.find({}, function(err, users) {
@@ -92,8 +100,45 @@ router.post('/admin/login',(req,res)=>{
 
  //console.log(User.find());
 
-  //res.send("yo baby")
-  
+ 
+})
+
+//Admin feedback portal
+router.get('/admin/feedback',(req,res)=>{
+  var data = [];
+  var i=0;
+  Feedback.find({}, function(err, feedbacks) {
+    
+
+    feedbacks.forEach(function(feedback) {
+      data[i++] = feedback;
+    });
+
+    res.render("adminFeedback",{data});  
+  });
+
+ //console.log(User.find());
+
+ 
+})
+
+//Admin view complains
+router.get('/admin/complains',(req,res)=>{
+  var data = [];
+  var i=0;
+  Request.find({}, function(err, requests) {
+    
+
+    requests.forEach(function(request) {
+      data[i++] = request;
+    });
+
+    res.render("adminComplains",{data});  
+  });
+
+ //console.log(User.find());
+
+ 
 })
 
 
@@ -112,11 +157,51 @@ router.get('/dashboard',ensureAuthenticated ,(req, res)=>
    res.render('table');
  });
 
+ //Displaying bookings
+ router.get('/dashboard/bookings',ensureAuthenticated,(req, res)=>{
+    Table.find({author:{id:req.user._id,username:req.user.email}},(err,obj)=>{
+      var data={};
+      let errors=[];
+      if(obj==null)
+        {
+          errors.push({msg:"You have not booked any table yet."});
+        }
+
+      if(errors.length > 0)
+      {
+        return res.render("booking",{errors,data});
+      }
+      data=obj;
+
+      res.render("booking",{data});
+    })
+});
+
+//Displaying orders
+router.get('/dashboard/foodorder',ensureAuthenticated,(req, res)=>{
+  Menu.find({author:{id:req.user._id,username:req.user.email}},(err,obj)=>{
+    var data={};
+    let errors=[];
+    if(obj==null)
+      {
+        errors.push({msg:"You have not ordered any food yet"});
+      }
+
+    if(errors.length > 0)
+    {
+      return res.render("orders",{errors,data});
+    }
+    data=obj;
+
+    res.render("orders",{data});
+  })
+});
+
  //Book Table post page (Saving table no)
  router.post('/dashboard/booktable',ensureAuthenticated,(req,res)=>{
    const {name, no , tnc} = req.body;
    const userId=req.user._id;
-   const userName = req.user.name;
+   const userName = req.user.email;
   //  console.log(userName,"  ",userId);
   //  console.log(name);
   //  console.log(no);
@@ -174,7 +259,7 @@ router.post('/dashboard/menu',ensureAuthenticated,(req, res)=>{
   let errors=[];
   var food = [];
   const userId=req.user._id;
-  const userName = req.user.name;
+  const userName = req.user.email;
   var variety = ["Dragon Roll","Onion Rings","Fries","Burger","Pasta","Pizza","Spaghetti","Risotto","Noodles","Chopsuey","Cupcakes","Waffles","Pastry","Cannoli"];
   for(var i in req.body)
   {

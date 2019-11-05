@@ -43,7 +43,7 @@ router.post('/register',(req,res)=> {
     if (!regex1.test(zipcode))
     {
       console.log("zipcode")
-      errors.push({msg:"Please enter the correct 6 digit correct"});
+      errors.push({msg:"Please enter the correct 6 digit zipcodenodemon "});
     }
 
     //Check password match
